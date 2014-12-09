@@ -1,4 +1,3 @@
-#include "avr_system.h"
 // Sensor System
 ISR(ADC_vect)
 {
@@ -325,8 +324,6 @@ void lcd_write_data(unsigned char val)
  
 void lcd_init(unsigned char maxrows, unsigned char maxcols)
 {
- int i=0,j=0;
- 
  lcd_maxrows = maxrows;
  lcd_maxcols = maxcols;
  uSecDelay(45000);
@@ -337,17 +334,6 @@ void lcd_init(unsigned char maxrows, unsigned char maxcols)
  lcd_write_command(0x06);
  uSecDelay(1000);
  lcd_write_command(0x1c);
- 
- for(i=20;i>0;i--)
- {
-  lcd_display_str(i,j,"-★- KMC KR2008 -★-");
-  msDelay(5);
-  j++;
-  if(j>1) j=0;
- }
-  lcd_display_str(0,1," -VER.HGBSRA120525- ");
- msDelay(50);
- 
  lcd_clear_screen();
  msDelay(50);
 }

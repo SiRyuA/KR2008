@@ -174,7 +174,6 @@ void IR_ADConverter_Save(int Delay, int Value)
   else if(SW3)
   {
    msDelay(300);
-   IR_ADConverter=Value;
    Out=1;
   }
   if(Out==1) break;
